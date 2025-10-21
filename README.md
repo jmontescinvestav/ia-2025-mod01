@@ -6,12 +6,12 @@ Repositorio para los laboratorios del módulo 1 del programa **Talento Altamente
 - **Programa:** Talento Altamente Especializado - Inteligencia Artificial 2025
 - **Institución:** COCYTEN-Nayarit
 - **Instructor:** Cristian Torres González
-- **Estudiante:** [Tu Nombre Completo]
+- **Estudiante:** Carlos Alberto Vidrios Serrano / Jorge Saúl Montes Cáceres
 
 ## 📚 Laboratorios
 | Laboratorio | Descripción | Estado |
 |-------------|-------------|---------|
-| [Lab1](Lab1/) | Introducción a Python | 🔄 En desarrollo |
 | [Lab2](Lab2/) | Fundamentos de Python | ✅ Completado |
+| [Lab3](Lab3/) | Fundamentos de Python | ✅ Completado |
 
-## 🗂️ Estructura del Proyecto
+
