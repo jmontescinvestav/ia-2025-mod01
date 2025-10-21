@@ -1,39 +1,33 @@
-#!/usr/bin/env python3
 """
-Lab 3 - Task 1: 4x4 matrix multiplication (NO libraries)
-Author: You
-How to run:
-  python3 task_1_matrix_4x4.py
-Then follow the prompts to enter the matrices row by row.
-
-Rules checked:
-- Uses only pure Python lists and loops (no numpy, no external libs).
+Lab 3 - Task 1: 4x4 Multiplicación de matrices sin usar librerias externas
+Autores: Carlos Alberto Vidrios Serrano
+         Jorge Saúl Montes Cáceres
 """
 
 def read_matrix_4x4(name: str):
-    print(f"Enter the 16 numbers for matrix {name}, row by row (4 numbers per row).")
+    print(f"Introduce los 16 numeros para la matriz {name}, renglon por renglon (4 numeros por renglon).")
     M = []
     for r in range(4):
         while True:
-            line = input(f"Row {r+1} (4 numbers separated by spaces): ").strip()
+            line = input(f"Renglon {r+1} (4 numeros separados por espacios): ").strip()
             parts = line.split()
             if len(parts) != 4:
-                print("  -> Please enter exactly 4 numbers.")
+                print("  -> Introduce exactamente 4 numeros.")
                 continue
             try:
                 row = [float(x) for x in parts]
                 M.append(row)
                 break
             except ValueError:
-                print("  -> Invalid number. Try again.")
+                print("  -> Numero invalido. Intenta de nuevo.")
     return M
 
 def multiply_4x4(A, B):
     # Validate shapes
     if len(A) != 4 or any(len(row) != 4 for row in A):
-        raise ValueError("Matrix A must be 4x4")
+        raise ValueError("Matriz A debe ser de 4x4")
     if len(B) != 4 or any(len(row) != 4 for row in B):
-        raise ValueError("Matrix B must be 4x4")
+        raise ValueError("Matriz B debe ser de 4x4")
     # Initialize C with zeros
     C = [[0.0 for _ in range(4)] for _ in range(4)]
     # Triple loop
@@ -52,12 +46,12 @@ def print_matrix(M, title=None):
         print("  " + "  ".join(f"{val:10.4f}" for val in row))
 
 def main():
-    print("=== 4x4 Matrix Multiplication ===")
+    print("=== 4x4 Multiplicacion de matrices ===")
     A = read_matrix_4x4("A")
     B = read_matrix_4x4("B")
     C = multiply_4x4(A, B)
-    print_matrix(A, title="Matrix A:")
-    print_matrix(B, title="Matrix B:")
+    print_matrix(A, title="Matriz A:")
+    print_matrix(B, title="Matriz B:")
     print_matrix(C, title="A x B = C:")
 
 if __name__ == "__main__":

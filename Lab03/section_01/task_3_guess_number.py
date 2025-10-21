@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 """
-Lab 3 - Task 3: Guess the number
-- Program chooses a number in [1, 100].
-- User guesses until correct.
-- After each wrong guess, print whether the secret number is higher or lower.
-- At the end, show the number of attempts.
-How to run:
-  python3 task_3_guess_number.py
-Tip: Type 'q' to quit early.
+Lab 3 - Task 3: Adivinar numero con pistas
+Autores: Carlos Alberto Vidrios Serrano
+         Jorge Saúl Montes Cáceres
 """
 
 import random
@@ -15,28 +10,28 @@ import random
 def main():
     secret = random.randint(1, 100)
     attempts = 0
-    print("=== Guess the Number (1..100) ===")
+    print("=== Adivina el número (1..100) ===")
     while True:
-        s = input("Your guess (or 'q' to quit): ").strip().lower()
+        s = input("Tu suposición (o 'q' para salir): ").strip().lower()
         if s == 'q':
-            print(f"Quit. The secret number was {secret}.")
+            print(f"Quit. El numero secreto era: {secret}.")
             break
         try:
             guess = int(s)
         except ValueError:
-            print("  -> Please enter an integer between 1 and 100.")
+            print("  -> Introduce un número entero entre 1 y 100.")
             continue
         if not (1 <= guess <= 100):
-            print("  -> Out of range. Enter 1..100.")
+            print("  -> Fuera de rango. Introduce un número entre 1 y 100.")
             continue
         attempts += 1
         if guess == secret:
-            print(f"Correct! You needed {attempts} attempt(s).")
+            print(f"¡Correcto! Necesitaste {attempts} intento(s).")
             break
         elif guess < secret:
-            print("Too low. Try a higher number.")
+            print("Demasiado bajo. Intenta un número más alto.")
         else:
-            print("Too high. Try a lower number.")
+            print("Demasiado alto. Intenta un número más bajo.")
 
 if __name__ == "__main__":
     main()

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Lab 3 - Task 2: Build a dictionary from the given animal names and create
-three new dictionaries with words containing 'a', 'b', and 'y' (case-insensitive).
-How to run:
-  python3 task_2_dict_filters.py
+Lab 3 - Task 2: Construir un diccionario con una lista de animales, a partir del diccionario 
+originar crear tres diccionarios cuando las palabras contengan: 'a', 'b', y 'y' (case-insensitive).
+Autores: Carlos Alberto Vidrios Serrano
+         Jorge Saúl Montes Cáceres
 """
 
 animals = [
@@ -16,8 +16,6 @@ animals = [
 ]
 
 def build_animals_dict():
-    # We'll preserve original capitalization in values and use lowercase keys
-    # This makes membership tests case-insensitive and keeps original names.
     return {name.lower(): name for name in animals}
 
 def filter_by_letter(d, letter):
@@ -30,10 +28,10 @@ def main():
     b_dict = filter_by_letter(d, "b")
     y_dict = filter_by_letter(d, "y")
 
-    print("Original dictionary size:", len(d))
-    print("Contains 'a':", len(a_dict), "items ->", sorted(a_dict.values()))
-    print("Contains 'b':", len(b_dict), "items ->", sorted(b_dict.values()))
-    print("Contains 'y':", len(y_dict), "items ->", sorted(y_dict.values()))
+    print("Diccionario original:", len(d)," items ->", sorted(d.values()))
+    print("Contienen 'a':", len(a_dict), "items ->", sorted(a_dict.values()))
+    print("Contienen 'b':", len(b_dict), "items ->", sorted(b_dict.values()))
+    print("Contienen 'y':", len(y_dict), "items ->", sorted(y_dict.values()))
 
 if __name__ == "__main__":
     main()
