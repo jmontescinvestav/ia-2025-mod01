@@ -9,8 +9,8 @@ def demo_error():
     print("== Demo error Task 4: SyntaxError por '=' en condición ==")
     bad = "pw = 'seguro123'\nconfirm = 'seguro123'\nif confirm = pw:\n    print('Coincide')"
     try:
-        compile(bad, "<string>", "exec")  # aquí se detecta el SyntaxError
-    except SyntaxError as e:
+        compile(bad, "<string>", "exec")  # aquí se genera el SyntaxError
+    except SyntaxError as e: # se cacha el error en este bloque exception
         print(">> Caught:", e)
 
 def demo_fix():
